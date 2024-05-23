@@ -4,7 +4,7 @@
 #macro rps_type_html5_surface 2
 
 ///@func pal_swap_init_system(shader, [html5 sprite shader], [html5 surface shader])
-function pal_swap_init_system(_shader, _html5_sprite_shader, _html5_surface_shader) {
+function pal_swap_init_system(_shader = shd_pal_swapper, _html5_sprite_shader = shd_pal_html_sprite, _html5_surface_shader = shd_pal_html_surface) {
 
 	//Initiates the palette system.  Call once at the beginning of your game somewhere.
 	//IMPORTANT: if you plan on using this for HTML5, you need to specify your two HTML5 
@@ -52,6 +52,7 @@ function pal_swap_init_system(_shader, _html5_sprite_shader, _html5_surface_shad
 	
 	global.retro_pal_swapper = _swapper;
 }
+pal_swap_init_system();
 	
 ///@func pal_swap_set(palette_sprite_index, palette_index, palette is surface);
 function pal_swap_set(_pal_sprite, _pal_index, _is_surface) {
